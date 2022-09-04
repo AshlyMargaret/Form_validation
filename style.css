@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container_forms{
+    width: 50%;
+    margin: 0 auto;
+    background-color: crimson;
+    margin-top: 20px;
+}
+h3{
+    text-align: center;
+    color: white;
+    border-bottom: 1px dotted white;
+}
+
+form{
+    padding: 20px;
+}
+
+input{
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+label{
+    padding: 15px 15px 15px 0px;
+   
+    
+}
+
+#fnme_rule1{
+    width: 100px;
+    color: aqua;
+    font-size: 13px;
+    display: none;
+}
+
+#fnme_rule2{
+    
+    color: aqua;
+    font-size: 13px;
+    display: none;
+}
+
+#fnme_rule3{
+ color: white;
+ padding-left: 90px;
+ display: none;
+}
+
+#lnme_rule{
+    display: none;
+    color: white;
+}
+
+#email_error{
+    display: none;
+    color: white;
+}
+
+#username_error{
+    display: none;
+    color: white;
+}
+
+#paswd_error{
+    /* display: none; */
+    color: white;
+}
+
+#dob_error{
+    color: white;
+}
+
+#form_error{
+    color: white;
+}
