@@ -17,6 +17,11 @@ function formValidation(event){
     console.log("gdhsfjsdhfjjjjjjjjjjjjj")
 
   }
+  else{
+    FormError.innerHTML = "Sucess...........";
+    window.location.href ="./sucess.html";
+
+  }
 
 }
 
@@ -91,7 +96,6 @@ function formValidation(event){
 
     else{
       
-
    }
 
   }
@@ -103,7 +107,7 @@ function formValidation(event){
    let username = document.getElementById("username_id");  
    let UserNameMessage = document.getElementById("username_message");
    let userNameRegex = /^[A-Za-z][A-Za-z0-9_]{7,29}$/;
-   let username_value
+   let username_value ;
 
 
    username.addEventListener("keyup",validateUserName);
