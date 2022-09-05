@@ -7,7 +7,7 @@
 .container_forms{
     width: 50%;
     margin: 0 auto;
-    background-color: crimson;
+    background-color: rgb(224, 166, 178);
     margin-top: 20px;
 }
 h3{
@@ -31,50 +31,74 @@ label{
     
 }
 
-#fnme_rule1{
-    width: 100px;
-    color: aqua;
-    font-size: 13px;
-    display: none;
+#required{
+    color: red;
 }
 
-#fnme_rule2{
+#fname_message{
+     color: white;
+     font-size: 13px;
+   
+}
+.fname_input_box{
+    display: flex;
+    gap: 10px;
+}
+
+#lname_message{
     
-    color: aqua;
+     color: white;
+     font-size: 13px;
+}
+.lname_input_box{
+    display: flex;
+    gap: 10px;
+}
+
+.email_input_box{
+    display: flex;
+    gap: 10px;
+}
+
+#email_message{
+     color: white;
+     font-size: 13px;
+}
+.username_input_box{
+    display: flex;
+    gap: 10px;
+}
+
+#username_message{
+     color: white;
+     font-size: 13px;
+}
+
+#paswd_message{
+     color: white;
+     font-size: 13px;
+}
+
+.password_input_box,.confirm_password_input_box{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+#confirm_paswd_message{
+    color: white;
     font-size: 13px;
-    display: none;
 }
 
-#fnme_rule3{
- color: white;
- padding-left: 90px;
- display: none;
-}
-
-#lnme_rule{
-    display: none;
+#dob_message{
     color: white;
+    font-size: 13px;
 }
 
-#email_error{
-    display: none;
-    color: white;
+.bday_label_input_box{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
-
-#username_error{
-    display: none;
-    color: white;
-}
-
-#paswd_error{
-    /* display: none; */
-    color: white;
-}
-
-#dob_error{
-    color: white;
-}
-
 #form_error{
     color: white;
 }

@@ -14,83 +14,65 @@
 
         <form action="" method="">
 
-            <span id="fnme_rule1">A First Name must not be empty.<br>
-                The First Name must be the only letter that may be in uppercase or lowercase<br>
-                The First Name must not have white spaces
-            </span>
-
+        
             <div class="fname_label">
-                <label for="">First Name</label>
+                <label for="">First Name <span id="required">(Required...)</span></label>
             </div>
             <div class="fname_input_box">
                 <input type="text" id="fname_id">
+                <span id="fname_message"></span>
             </div>
+          
            
          
           
-            <span id="fnme_rule2">
-                It should be the only letter that may be in uppercase or lowercase,must not have white spaces
-             </span>
-         
              <div class="lname_label">
-                <label for="">Last Name</label>
+                <label for="">Last Name <span id="required">(Required...)</span></label>
              </div>
              <div class="lname_input_box">
                 <input type="text" id="lname_id">
+                 <span id="lname_message"></span>
              </div>
        
             
-           
-            <span id="lnme_rule">
-                It should be the only letter that may be in uppercase or lowercase,must not have white spaces
-             </span>
 
              <div class="email_label">
-                <label for="">Email</label>
+                <label for="">Email <span id="required">(Required...)</span></label>
              </div>
              <div class="email_input_box">
                 <input type="text" id="email_id">
+                <span id="email_message"></span>
              </div>
             
-            <span id="email_error">
-              Please Enter Valid Email Address
-             </span>
-
+           
             
              <div class="username_label">
-                <label for="">User Name</label>
+                <label for="">User Name <span id="required">(Required...)</span></label>
              </div>
              <div class="username_input_box">
                 <input type="text" id="username_id">
-             </div>
+                <span id="username_message"></span>
+            </div>
           
-            <span id="username_error">
-                A valid username should start with an alphabet so, [A-Za-z].
-                All other characters can be alphabets, numbers or an underscore so, [A-Za-z0-9_].
-               Since length constraint was given as 8-30 and we had already fixed the first character, so we give {7,29}.
-            </span>
-
+           
             <div class="password_label">
-                <label for="">Password</label>
+                <label for="">Password <span id="required">(Required...)</span></label>
             </div>
           <div class="password_input_box">
             <input type="password" name="" id="p1">
+            <span id ="paswd_message"></span>   
           </div>
-          <span id ="paswd_error">
-            
-        </span>
-
-            
+         
+             
           <div class="confirm_password_label">
-            <label for="">Confirm Password</label>
+            <label for="">Confirm Password <span id="required">(password must be same)</span></label>
         </div>
        
         <div class="confirm_password_input_box">
             <input type="password" name="" id="p2">
+            <span id ="confirm_paswd_message"></span>
         </div> 
-        <span id ="confirm_paswd_error">
-            
-        </span>
+       
           
            
         <!-- <div class="gender_label">
@@ -100,18 +82,16 @@
           <div class="gender_input_box">
             <input type="radio" name="gender" value="male" id="male1"> Male
             <input type="radio" name="gender" value="female" id="female1"> Female
+            <span id ="gender_error"></span> 
           </div>  
-          <span id ="gender_error">
-            
-        </span>  -->
+           -->
            
-           <div class="bday_label_input_box">
             <label for="birthday">DOB:</label>
+            <div class="bday_label_input_box">
             <input type="date" name="birthday" id="dob_id">
-           </div>
-           <span id="dob_error">
-
-           </span>
+            <span id="dob_message"></span>
+            </div>
+           
            
            <div class="signup_input_box">
             <input type="submit" value="Sign Up" id="submit_id">
