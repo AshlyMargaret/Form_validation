@@ -16,7 +16,7 @@
 
         
             <div class="fname_label">
-                <label for="">First Name <span id="required">(Required...)</span></label>
+                <label for="">First Name <span id="required">(*)</span></label>
             </div>
             <div class="fname_input_box">
                 <input type="text" id="fname_id">
@@ -27,7 +27,7 @@
          
           
              <div class="lname_label">
-                <label for="">Last Name <span id="required">(Required...)</span></label>
+                <label for="">Last Name <span id="required">(*)</span></label>
              </div>
              <div class="lname_input_box">
                 <input type="text" id="lname_id">
@@ -37,7 +37,7 @@
             
 
              <div class="email_label">
-                <label for="">Email <span id="required">(Required...)</span></label>
+                <label for="">Email <span id="required">(*)</span></label>
              </div>
              <div class="email_input_box">
                 <input type="text" id="email_id">
@@ -47,7 +47,7 @@
            
             
              <div class="username_label">
-                <label for="">User Name <span id="required">(Required...)</span></label>
+                <label for="">User Name <span id="required">(*)</span></label>
              </div>
              <div class="username_input_box">
                 <input type="text" id="username_id">
@@ -56,7 +56,7 @@
           
            
             <div class="password_label">
-                <label for="">Password <span id="required">(Required...)</span></label>
+                <label for="">Password <span id="required">(*)</span></label>
             </div>
           <div class="password_input_box">
             <input type="password" name="" id="p1">
@@ -65,7 +65,7 @@
          
              
           <div class="confirm_password_label">
-            <label for="">Confirm Password <span id="required">(password must be same)</span></label>
+            <label for="">Confirm Password <span id="required">(*)</span></label>
         </div>
        
         <div class="confirm_password_input_box">
@@ -86,7 +86,7 @@
           </div>  
            -->
            
-            <label for="birthday">DOB:</label>
+            <label for="birthday">DOB: <span id="required">(*)</span></label>
             <div class="bday_label_input_box">
             <input type="date" name="birthday" id="dob_id">
             <span id="dob_message"></span>
@@ -94,7 +94,7 @@
            
            
            <div class="signup_input_box">
-            <input type="submit" value="Sign Up" id="submit_id">
+            <button id="submit_id">Sign Up</button>
            </div>
            <span id="form_error">
 

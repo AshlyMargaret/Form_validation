@@ -1,29 +1,51 @@
 
-
+// form submission
 
 let submit_buton = document.getElementById("submit_id");
 let FormError = document.getElementById("form_error");
+let inputFiled = document.querySelectorAll("input");
+console.log(inputFiled);
+let i ;
 
-submit_buton.addEventListener("click",formValidation);
 
 function formValidation(event){
   event.preventDefault();
 
+ for(i=0 ;i<inputFiled.length;i++){
+  // console.log("hiii i am i "+i);
+  if(inputFiled[i].value.length == 0){
+    // console.log("Please input a Value");
+    inputFiled[i].style.borderColor = "red";
+    FormError.innerHTML = "Please Fill the fields";
+    FormError.style.color = "red";
+   }
+
+   else if(inputFiled[i].value.length != 0 )
+   inputFiled[i].style.borderColor = "green"; 
  
-
-  if(firstName == " " || firstName == null || lastName == " " || lastName == null || email_value == " " || email_value == null || username_value == " " || username_value == null || password_value == " " || password_value == null || confirm_password_value == " " || confirm_password_value == null || dob_value == " " || dob_value == null) {
-
-    FormError.innerHTML = "please provide all fields";
-    console.log("gdhsfjsdhfjjjjjjjjjjjjj")
-
-  }
-  else{
-    FormError.innerHTML = "Sucess...........";
-    window.location.href ="./sucess.html";
-
-  }
+ }
 
 }
+
+submit_buton.addEventListener("click",formValidation);
+
+
+// focus set
+
+
+
+const formId = document.getElementById('form_id');
+
+formId.addEventListener('focus', (event) => {
+  event.target.style.background = 'pink';
+}, true);
+
+formId.addEventListener('blur', (event) => {
+  event.target.style.background = '';
+}, true);
+
+
+
 
 
 
@@ -36,8 +58,7 @@ function formValidation(event){
     let firstName;
 
      
-    first_name.addEventListener("keyup",f_name_validation);
-
+  
     function f_name_validation(){
       firstName = first_name.value;
 
@@ -46,14 +67,11 @@ function formValidation(event){
 
         console.log("mistake");
       }
-      if(firstName == " " || firstName == null ){
-        fnameMessage.innerHTML = "please enter first name"
+      
       }
-      else{
-          
-      }
+      first_name.addEventListener("keyup",f_name_validation);
 
-    }
+    
 
 // last name validation code
 
@@ -62,7 +80,6 @@ function formValidation(event){
   let lnameMessage = document.getElementById("lname_message");
   let lastName
 
-  last_name.addEventListener("keyup",l_name_validation);
 
      function l_name_validation(){
         lastName = last_name.value;
@@ -70,11 +87,9 @@ function formValidation(event){
          if(!lastName.match(lname_regex)){
           lnameMessage.innerHTML ="The First Name must be the only letter that uppercase or lowercase The First Name must not have white spaces";
        }
-         else{
-           
-     }
-
    }
+
+   last_name.addEventListener("keyup",l_name_validation);
 
 // email validation code
 
@@ -84,7 +99,7 @@ function formValidation(event){
    let email_value;
 
 
-   emaill.addEventListener("keyup",validateEmail);
+ 
 
      function validateEmail(){
       email_value = emaill.value;
@@ -93,12 +108,9 @@ function formValidation(event){
      if(!check){ 
       EmailMessage.innerHTML = "Enter Valid Email Address"
     }
-
-    else{
-      
-   }
-
+  
   }
+  emaill.addEventListener("keyup",validateEmail);
 
   // username name validation code
 
@@ -107,11 +119,10 @@ function formValidation(event){
    let username = document.getElementById("username_id");  
    let UserNameMessage = document.getElementById("username_message");
    let userNameRegex = /^[A-Za-z][A-Za-z0-9_]{7,29}$/;
-   let username_value ;
+   let username_value
 
 
-   username.addEventListener("keyup",validateUserName);
-
+  
      function validateUserName(){
      username_value = username.value;
     
@@ -120,13 +131,9 @@ function formValidation(event){
       UserNameMessage.innerHTML = "Username should start with an alphabet so, [A-Za-z].All other characters can be alphabets, numbers or an underscore.length must be 8-30 characters."
     }
 
-    else{
-    
-
-   }
-
-  
   }
+
+  username.addEventListener("keyup",validateUserName);
 
 
 
@@ -137,8 +144,7 @@ function formValidation(event){
  let password_regex = /^[A-Za-z]\w{7,14}$/;
  let password_value;
 
- password.addEventListener("keyup",verifyPassword);
-
+ 
  function verifyPassword(){
     password_value = password.value;
 
@@ -158,6 +164,8 @@ function formValidation(event){
     return password_value;
  }
 
+ password.addEventListener("keyup",verifyPassword);
+
 
 // confirm password validation code
 
@@ -166,7 +174,7 @@ let confirmMessage = document.getElementById("confirm_paswd_message");
 let  confirm_password_value;
 
 
-    confirm_password.addEventListener("keyup",CheckPassword)
+   
 
     function CheckPassword(){
 
@@ -176,16 +184,17 @@ let  confirm_password_value;
         confirm_password_value = confirm_password.value;
 
         if(!password_value.match(confirm_password_value)){
-          confirmMessage.innerHTML = "'Wrong...!'"
+          confirmMessage.innerHTML = "'Passwod Must be same!'"
            console.log("not match");
         }
         else{
-            console.log("sucess");
-           
+            console.log("sucess");     
             
         }
         
     }
+
+    confirm_password.addEventListener("keyup",CheckPassword)
 
     // gender validation code
 
@@ -232,9 +241,7 @@ let  confirm_password_value;
     let present_dob;
     let age;
 
-    dob.addEventListener("change",validateDate);
     
-
     function validateDate(){
        dob_value = dob.value;
        console.log(dob_value);
@@ -284,6 +291,6 @@ let  confirm_password_value;
         console.log("sucess ghfjfj");
        }
     }
-
+    dob.addEventListener("change",validateDate);
 
    
