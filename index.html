@@ -12,7 +12,7 @@
     <div class="container_forms">
         <h3>Registration Form</h3>
 
-        <form action="" method="">
+        <form action="" method="" id="form_id">
 
         
             <div class="fname_label">
@@ -20,7 +20,7 @@
             </div>
             <div class="fname_input_box">
                 <input type="text" id="fname_id">
-                <span id="fname_message"></span>
+                <span id="fname_message" class="ccc"></span>
             </div>
           
            
@@ -31,7 +31,7 @@
              </div>
              <div class="lname_input_box">
                 <input type="text" id="lname_id">
-                 <span id="lname_message"></span>
+                 <span id="lname_message" class="ccc"></span>
              </div>
        
             
@@ -86,7 +86,7 @@
           </div>  
            -->
            
-            <label for="birthday">DOB: <span id="required">(*)</span></label>
+            <label for="birthday">DOB:<span id="required">(*)</span></label>
             <div class="bday_label_input_box">
             <input type="date" name="birthday" id="dob_id">
             <span id="dob_message"></span>
@@ -94,6 +94,7 @@
            
            
            <div class="signup_input_box">
+           
             <button id="submit_id">Sign Up</button>
            </div>
            <span id="form_error">
@@ -104,8 +105,6 @@
         </form>
 
     </div>
-
-
  
     <script src="./index.js"></script>
 </body>

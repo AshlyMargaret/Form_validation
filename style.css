@@ -103,3 +103,26 @@ label{
 #form_error{
     color: white;
 }
+
+
+
+
+
+@media screen and (max-width:414px) {
+    .container_forms{
+        width: 100%;
+        background-color: rgb(7, 7, 7);
+    }
+
+    label{
+        color: white;
+    }
+    input{
+        width: 100%;
+        padding: 15px 0px;
+    }
+    #submit_id{
+        width: 100%;
+        padding: 10px 0px;
+    }
+}

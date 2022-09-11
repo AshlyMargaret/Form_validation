@@ -4,9 +4,14 @@
 let submit_buton = document.getElementById("submit_id");
 let FormError = document.getElementById("form_error");
 let inputFiled = document.querySelectorAll("input");
+const formId = document.getElementById('form_id');
+console.log(formId);
+
 console.log(inputFiled);
 let i ;
 
+
+submit_buton.addEventListener("click",formValidation);
 
 function formValidation(event){
   event.preventDefault();
@@ -27,14 +32,8 @@ function formValidation(event){
 
 }
 
-submit_buton.addEventListener("click",formValidation);
-
-
 // focus set
 
-
-
-const formId = document.getElementById('form_id');
 
 formId.addEventListener('focus', (event) => {
   event.target.style.background = 'pink';
@@ -46,10 +45,6 @@ formId.addEventListener('blur', (event) => {
 
 
 
-
-
-
-
 // first name validation code
 
     let first_name = document.getElementById("fname_id");
@@ -57,7 +52,7 @@ formId.addEventListener('blur', (event) => {
     let fnameMessage = document.getElementById("fname_message");
     let firstName;
 
-     
+    first_name.addEventListener("keyup",f_name_validation);
   
     function f_name_validation(){
       firstName = first_name.value;
@@ -69,7 +64,7 @@ formId.addEventListener('blur', (event) => {
       }
       
       }
-      first_name.addEventListener("keyup",f_name_validation);
+    
 
     
 
@@ -80,6 +75,7 @@ formId.addEventListener('blur', (event) => {
   let lnameMessage = document.getElementById("lname_message");
   let lastName
 
+  last_name.addEventListener("keyup",l_name_validation);
 
      function l_name_validation(){
         lastName = last_name.value;
@@ -89,7 +85,7 @@ formId.addEventListener('blur', (event) => {
        }
    }
 
-   last_name.addEventListener("keyup",l_name_validation);
+   
 
 // email validation code
 
@@ -99,7 +95,7 @@ formId.addEventListener('blur', (event) => {
    let email_value;
 
 
- 
+   emaill.addEventListener("keyup",validateEmail);
 
      function validateEmail(){
       email_value = emaill.value;
@@ -110,7 +106,7 @@ formId.addEventListener('blur', (event) => {
     }
   
   }
-  emaill.addEventListener("keyup",validateEmail);
+  
 
   // username name validation code
 
@@ -122,7 +118,8 @@ formId.addEventListener('blur', (event) => {
    let username_value
 
 
-  
+   username.addEventListener("keyup",validateUserName);
+
      function validateUserName(){
      username_value = username.value;
     
@@ -133,8 +130,7 @@ formId.addEventListener('blur', (event) => {
 
   }
 
-  username.addEventListener("keyup",validateUserName);
-
+ 
 
 
  // password validation code
@@ -144,7 +140,8 @@ formId.addEventListener('blur', (event) => {
  let password_regex = /^[A-Za-z]\w{7,14}$/;
  let password_value;
 
- 
+ password.addEventListener("keyup",verifyPassword);
+
  function verifyPassword(){
     password_value = password.value;
 
@@ -164,7 +161,7 @@ formId.addEventListener('blur', (event) => {
     return password_value;
  }
 
- password.addEventListener("keyup",verifyPassword);
+ 
 
 
 // confirm password validation code
@@ -174,7 +171,7 @@ let confirmMessage = document.getElementById("confirm_paswd_message");
 let  confirm_password_value;
 
 
-   
+confirm_password.addEventListener("keyup",CheckPassword)  
 
     function CheckPassword(){
 
@@ -184,7 +181,7 @@ let  confirm_password_value;
         confirm_password_value = confirm_password.value;
 
         if(!password_value.match(confirm_password_value)){
-          confirmMessage.innerHTML = "'Passwod Must be same!'"
+          confirmMessage.innerHTML = "'Wrong...!'"
            console.log("not match");
         }
         else{
@@ -194,7 +191,7 @@ let  confirm_password_value;
         
     }
 
-    confirm_password.addEventListener("keyup",CheckPassword)
+   
 
     // gender validation code
 
@@ -228,69 +225,169 @@ let  confirm_password_value;
 
     // dob validation code
 
-    let dob_regex = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/ ;
+
+
+
+    // let dob_regex = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/ ;
+   
+    // let dob = document.getElementById("dob_id");
+    // let DobMessage = document.getElementById("dob_message");
+    // let dob_value;
+    // let birth;
+    // let birth_year;
+    // let present_date;
+    // let present_month;
+    // let present_year;
+    // let present_dob;
+    // let age;
+
+
+    // dob.addEventListener("change",validateDate);
+    
+    // function validateDate(){
+    //    dob_value = dob.value;
+    //    console.log(dob_value);
+      
+    //    birth = new Date(dob_value);
+    //    birth_year = birth.getFullYear();
+    //    console.log(`birth year is ${birth_year}`);
+    //    present_dob = new Date();
+
+    //    present_date = present_dob.getDate();
+    //    present_month = present_dob.getMonth()+1; 
+    //    present_year = present_dob.getFullYear();
+      
+    //    console.log(`present year is ${present_year}`);
+
+    //        if(present_date<10) 
+    //       {
+    //         present_date='0'+present_date;
+    //       } 
+
+    //      if(present_month<10) 
+    //      {
+    //       present_month='0'+present_month;
+    //      } 
+      
+    //      present_date = present_year + '-'+ present_month + '-' + present_date;
+    //      console.log(`present date is ${present_date}`);
+
+    //      age = present_year - birth_year;
+    //      console.log(`age is ${age}`);
+
+       
+      
+    //     if(!dob_value.match(dob_regex) || dob_value == " " ){
+
+    //     console.log("error format");
+    //     DobMessage.innerHTML = "Please Enter Valid Formmat"
+    //    }
+
+    //    if (age<18){
+    //      console.log("Age should be more than 18 years");
+    //      DobMessage.innerHTML = "Age should be more than 18 years"
+    //    }
+
+    //    else{
+
+    //     console.log("sucess ghfjfj");
+    //    }
+    // }
+
+
+
+
+
+
+    //
+
+    // let dob_regex = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/ ;
    
     let dob = document.getElementById("dob_id");
     let DobMessage = document.getElementById("dob_message");
     let dob_value;
-    let birth;
-    let birth_year;
-    let present_date;
-    let present_month;
-    let present_year;
-    let present_dob;
-    let age;
+    // let birth;
+    // let birth_year;
+    // let present_date;
+    // let present_month;
+    // let present_year;
+    // let present_dob;
+    // let age;
 
+
+    dob.addEventListener("change",underAgeValidate);
+
+    dob_value = dob.value;
+    // console.log(dob_value);
+   
+    // birth = new Date(dob_value);
+    // birth_year = birth.getFullYear();
+    // console.log(`birth year is ${birth_year}`);
+    // present_dob = new Date();
+
+    // present_date = present_dob.getDate();
+    // present_month = present_dob.getMonth()+1; 
+    // present_year = present_dob.getFullYear();
+
+
+    function underAgeValidate(){
+
+      // console.log("hii,i am date")
+      // it will accept two types of format yyyy-mm-dd and yyyy/mm/dd
+      // var optimizedBirthday = dob_value.replace(/-/g, "/");
     
-    function validateDate(){
-       dob_value = dob.value;
-       console.log(dob_value);
-      
-       birth = new Date(dob_value);
-       birth_year = birth.getFullYear();
-       console.log(`birth year is ${birth_year}`);
-       present_dob = new Date();
+    
+      //set date based on birthday at 01:00:00 hours GMT+0100 (CET)
+      var myBirthday = new Date(dob_value);
+    
+      // set current day on 01:00:00 hours GMT+0100 (CET)
+      var currentDate = new Date().toJSON().slice(0,10)+' 01:00:00';
+    
+      // calculate age comparing current date and borthday
+      var myAge = ~~((Date.now(currentDate) - myBirthday) / (31557600000));
+    
 
-       present_date = present_dob.getDate();
-       present_month = present_dob.getMonth()+1; 
-       present_year = present_dob.getFullYear();
-      
-       console.log(`present year is ${present_year}`);
+    //    if  (!dob_value.match(dob_regex) || dob_value == " " ){
 
-           if(present_date<10) 
-          {
-            present_date='0'+present_date;
-          } 
+    //     console.log("error format");
+    //     DobMessage.innerHTML = "Please Enter Valid Formmat"
+    //  }  
+ 
+ 
+        if (myAge < 18) {
+        DobMessage.innerHTML = "Age should be more than 18 years"
+              //  return false;
+            }
+          
+            else if(myAge > 18){
+          // return true;
+          DobMessage.innerHTML = "sucess"
+          console.log("sucess format")
+      }
+      else{
 
-         if(present_month<10) 
-         {
-          present_month='0'+present_month;
-         } 
-      
-         present_date = present_year + '-'+ present_month + '-' + present_date;
-         console.log(`present date is ${present_date}`);
-
-         age = present_year - birth_year;
-         console.log(`age is ${age}`);
-
-       
-      
-        if(!dob_value.match(dob_regex) || dob_value == " " ){
-
-        console.log("error format");
-        DobMessage.innerHTML = "Please Enter Valid Formmat"
-       }
-
-       if (age<18){
-         console.log("Age should be more than 18 years");
-         DobMessage.innerHTML = "Age should be more than 18 years"
-       }
-
-       else{
-
-        console.log("sucess ghfjfj");
-       }
-    }
-    dob.addEventListener("change",validateDate);
+      }
+    
+    } 
+    
+    
+   
 
    
+    first_name.addEventListener("focusout", f_name_validation)
+  
+    last_name.addEventListener("focusout", l_name_validation)
+
+    emaill.addEventListener("focusout",validateEmail)
+
+    username.addEventListener("focusout",validateUserName)
+
+    password.addEventListener("focusout",verifyPassword)
+
+    confirm_password.addEventListener("focusout",CheckPassword)
+
+    //dob.addEventListener("focusout",validateDate)
+
+    dob.addEventListener("focusout",underAgeValidate)
+
+     
